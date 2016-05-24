@@ -1,0 +1,85 @@
+#overview of git
+
+Git consists of 3 parts
+
+*the folder (directory/working tree) where your files are
+*the staging area where you construct the next version 
+*the object store where the versions are stored
+
+# setting up git
+
+
+# creating the next version
+
+1. Make the desired changes to the files
+2. Add the changes to be in the next version
+3. Commit the staged changes as the next version
+
+
+```
+nano notes.txt
+git add notes.txt
+git commit
+```
+# Viewing changes
+
+The `git status` command shows you were you are
+at.  The red color indicates changes that aren't
+set to be part of the next version.  The green
+color indicates changes that are set to be part
+of the next version.
+
+## Difference
+
+View the what isn't going to be part of the next
+version
+
+git diff [<path>]
+```
+
+View what is going to be part of the next version
+
+```
+git diff --staged [<path>]
+
+
+
+
+# History
+
+You can see the history of your changes with
+
+```     
+git log
+```
+
+Each version is associated with a big ugly number.
+You don't have to type in the full number, just
+the first couple of digits.  A nice summary is
+given by
+
+```
+git log --oneline
+```
+
+## Specifying previous versions
+
+You can specify a previous version with
+`<commmit>~<n>` where `<commit>` is version
+number of name associated with the version.
+The `~<n>` says to go back n versions.
+
+
+## settings
+
+The command `git init` creates the git stuff (staging and the object store) 
+
+The `--global` option sets the settings for the whole computer instead of just the directory
+
+The `core.editor` command sets the default editor used by git
+
+```
+git config --global user.name "My Name"
+git config --global user.email me@somewhere.com
+git config --global color.ui auto
+git config --global core.editor nano
